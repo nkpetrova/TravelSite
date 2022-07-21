@@ -1,8 +1,8 @@
 <mat-card>
     <p>
-        <button mat-fab disabled aria-label="Example icon button with a heart icon">
+        <button mat-fab color="basic" >
             <mat-icon>home</mat-icon>
-        </button>
+          </button> 
     </p>
     <span>Welcome!</span>
     <br>
@@ -12,7 +12,9 @@
 
     <mat-card-content>
         <br>
-        <h3><mat-icon >public</mat-icon> Тур. фирмы</h3>
+        <h3><button mat-fab disabled >
+            <mat-icon>public</mat-icon>
+          </button> Тур. фирмы</h3>
         <h3>Id, Название, Адрес, Комиссия:</h3>
         <mat-list role="list">
             
@@ -82,7 +84,9 @@
 
     <mat-card-content>
         <br>
-    <h3><mat-icon>beach_access</mat-icon> Путевки </h3> 
+    <h3><button mat-fab disabled >
+        <mat-icon>beach_access</mat-icon>
+      </button> Путевки </h3> 
     <h3>Id, Санаторий, Адрес, Цена, Количество:</h3>
         <mat-list role="list">
             <tl-voucher-list-item *ngFor="let item of vouchers"
@@ -160,8 +164,10 @@
 
     <mat-card-content>
         <br>
-        <h3><mat-icon>sentiment_very_satisfied</mat-icon> Уже сделали заказ </h3>
-        <h3>Id, Дата, Id турфирмы, Id путевки, Стоимость, Количество:</h3>
+        <h3><button mat-fab disabled >
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+          </button> Уже сделали заказ </h3>
+        <h3>Id, Дата, Id тур. фирмы, Id путевки, Стоимость, Количество:</h3>
             <mat-list role="list">
                 <tl-booking-list-item *ngFor="let item of bookings"
                                    [item]="item"
