@@ -1,17 +1,26 @@
 <mat-card>
-    <mat-card-title >Добро пожаловать!</mat-card-title>
-    <mat-card-content>
-        <span >Информация о возможных турах:</span>
+    <p>
+        <mat-icon matBadge="10" matBadgeSize="large" matBadgeColor="warn">home</mat-icon>
+    </p>
+    <span>Welcome!</span>
+    <br>
+    <span>Информация о возможных турах:</span>
+    <br>
+    <br>
 
-        <h3>Тур. фирмы:</h3>
+    <mat-card-content>
+        <br>
+        <h3><mat-icon >public</mat-icon> Тур. фирмы:</h3>
         <h3>Id, Название, Адрес, Комиссия:</h3>
         <mat-list role="list">
+            
             <tl-turfirma-list-item *ngFor="let item of turfirmas"
                                [item]="item"
                                role="listitem"
                                (delete)="deleteTurfirma($event)"
                                >
             </tl-turfirma-list-item>
+            
         </mat-list>
 <s>             </s>
     </mat-card-content>
@@ -50,7 +59,7 @@
             </mat-form-field>
             <br>
 
-           <button mat-flat-button color="accent" (click)="addTurfirmaItem()">Add</button>
+           <button mat-flat-button color="accent" (click)="addTurfirmaItem()">Добавить тур. фирму</button>
            <br>
            <br>
 
@@ -65,13 +74,14 @@
 
         </form>
 
-        <button mat-flat-button color="accent" (click)="updateTurfirmaItem()">Update</button>
+        <button mat-flat-button color="accent" (click)="updateTurfirmaItem()">Обновить информацию о тур. фирме</button>
         
     </mat-card-actions>
 
 
     <mat-card-content>
-    <h3> Путевки: </h3>
+        <br>
+    <h3><mat-icon>beach_access</mat-icon> Путевки: </h3> 
     <h3>Id, Санаторий, Адрес, Цена, Количество:</h3>
         <mat-list role="list">
             <tl-voucher-list-item *ngFor="let item of vouchers"
@@ -127,7 +137,7 @@
             </mat-form-field>
             
             <br>
-            <button mat-flat-button color="accent" (click)="addVoucherItem()">Add</button>
+            <button mat-flat-button color="accent" (click)="addVoucherItem()">Добавить путевку</button>
             <br>
             <br>
 
@@ -142,13 +152,14 @@
 
         </form>
 
-        <button mat-flat-button color="accent" (click)="updateVoucherItem()">Update</button>
+        <button mat-flat-button color="accent" (click)="updateVoucherItem()">Обновить информацию о путевке</button>
         
     </mat-card-actions>
 
 
     <mat-card-content>
-        <h3> Уже сделали заказ: </h3>
+        <br>
+        <h3><mat-icon>sentiment_very_satisfied</mat-icon> Уже сделали заказ: </h3>
         <h3>Id, Дата, Id турфирмы, Id путевки, Стоимость, Количество:</h3>
             <mat-list role="list">
                 <tl-booking-list-item *ngFor="let item of bookings"
@@ -215,7 +226,7 @@
                 
                 
                 <br>
-                <button mat-flat-button color="accent" (click)="addBookingItem()">Add</button>
+                <button mat-flat-button color="accent" (click)="addBookingItem()">Добавить заказ</button>
                 <br>
                 <br>
     
@@ -230,7 +241,7 @@
     
             </form>
     
-            <button mat-flat-button color="accent" (click)="updateBookingItem()">Update</button>
+            <button mat-flat-button color="accent" (click)="updateBookingItem()">Обновить заказ</button>
             
         </mat-card-actions>
 </mat-card>
