@@ -10,14 +10,14 @@ mat-card {
 
 span {
     font-size: 300%;
-    text-shadow: 4px 2px 6px black;
+    text-shadow: 2px 1px 6px black;
     margin-left: 10px;
 }
 
 h3 {
     font-family: Georgia, serif;
-    font-size: 150%; 
-    text-shadow: 2px 1px 1px black;
+    font-size: 200%; 
+    text-shadow: 1px 1px 1px rgb(58, 3, 104);
     margin-left: 10px;
 }
 
@@ -27,3 +27,33 @@ mat-list {
     margin-top: 20px;
     font-family: Georgia; 
 }
+
+.example-menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-width: 280px;
+    background-color: #808080;
+    padding: 6px 0;
+  }
+  
+  mat-nav-list {
+
+    background-color: transparent;
+    cursor: grab;
+    color:white;
+  
+    user-select: none;
+    min-width: 20px;
+    line-height: 25px;
+  
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+  
+  }
+  
+  mat-list-item {
+    border: solid #4f4f53d5;
+  }

@@ -1,0 +1,46 @@
+mat-card {
+  background: #696969;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  margin: 15px auto auto auto;
+  font-family: Times New Roman, serif; 
+  font-size: 100%; 
+
+}
+
+span {
+  font-size: 300%;
+  text-shadow: 4px 2px 6px black;
+  margin-left: 10px;
+}
+
+h3 {
+  font-family: Georgia, serif;
+  font-size: 150%; 
+  text-shadow: 2px 1px 1px black;
+  margin-left: 10px;
+}
+
+mat-list {
+  background: #808080;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-family: Georgia; 
+}
+
+mat-nav-list {
+background-color: transparent;
+cursor: grab;
+color:white;
+user-select: none;
+
+display: flex;
+align-items: center;
+flex-direction: row;
+flex: 1;
+
+}
+
+mat-list-item {
+border: solid #4f4f53d5;
+}

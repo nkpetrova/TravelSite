@@ -16,13 +16,19 @@ import { VoucherListItemComponent } from './voucher-list-item/voucher-list-item.
 import { BookingListItemComponent } from './booking-list-item/booking-list-item.component';
 import { VoucherService } from "./shared/voucher.service";
 import { BookingService } from "./shared/booking.service";
+import { TurfirmaListPageComponent } from './turfirma-list-page/turfirma-list-page.component';
+import { VoucherListPageComponent } from './voucher-list-page/voucher-list-page.component';
+import { BookingListPageComponent } from './booking-list-page/booking-list-page.component';
 
 @NgModule({
     declarations: [
         TravellListPageComponent,
         TurfirmaListItemComponent,
         VoucherListItemComponent,
-        BookingListItemComponent
+        BookingListItemComponent,
+        TurfirmaListPageComponent,
+        VoucherListPageComponent,
+        BookingListPageComponent,
     ],
     imports: [
         HttpClientModule,

@@ -1,0 +1,119 @@
+<mat-card>
+    <p>
+        <button mat-fab color="primary" ><a routerLink="/travell-list">
+            <mat-icon>home</mat-icon></a>
+          </button> 
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/turfirma">
+            <mat-icon>public</mat-icon></a>
+          </button>
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/voucher">
+            <mat-icon>beach_access</mat-icon></a>
+          </button>
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/booking">
+            <mat-icon><mat-icon>sentiment_very_satisfied</mat-icon></mat-icon></a>
+          </button>
+          &nbsp;
+    </p>
+
+    <br>
+    <br>
+    <span>Информация о заказах</span>
+    <br>
+    <br>
+    
+    <mat-card-content>
+        <br>
+        <h3><button mat-fab disabled >
+            <mat-icon>sentiment_very_satisfied</mat-icon>
+          </button> Заказы </h3>
+        <h3>Id, Дата, Id тур. фирмы, Id путевки, Стоимость, Количество:</h3>
+            <mat-list role="list">
+                <tl-booking-list-item *ngFor="let item of bookings"
+                                   [item]="item"
+                                   role="listitem"
+                                   (delete)="deleteBooking($event)"
+                                   >
+                </tl-booking-list-item>
+            </mat-list>
+    <s>             </s>
+        </mat-card-content>
+        <mat-card-actions>
+            
+            <form [formGroup]="form2">
+    
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Месяц</mat-label>
+                    <input formControlName="date" matInput type="text">
+                    <button mat-stroked-button color="primary" *ngIf="dateControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="dateControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                &nbsp;
+    
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Id тур. фирмы</mat-label>
+                    <input formControlName="turfirma_id" matInput type="number" min = 0>
+                    <button mat-stroked-button color="primary" *ngIf="turfirma_idControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="turfirma_idControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                &nbsp;
+    
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Id путевки</mat-label>
+                    <input formControlName="voucher_id" matInput type="number" min = 0>
+                    <button mat-stroked-button color="primary" *ngIf="voucher_idControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="voucher_idControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                &nbsp;
+
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Стоимость</mat-label>
+                    <input formControlName="price_b" matInput type="number" min = 0>
+                    <button mat-stroked-button color="primary" *ngIf="price_bControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="price_bControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                &nbsp;
+    
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Количество</mat-label>
+                    <input formControlName="quantity_b" matInput type="number" min = 0>
+                    <button mat-stroked-button color="primary" *ngIf="quantity_bControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="quantity_bControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                
+                
+                <br>
+                <button mat-flat-button color="accent" (click)="addBookingItem()">Добавить заказ</button>
+                <br>
+                <br>
+    
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Id (for update)</mat-label>
+                    <input formControlName="id_b" matInput type="number" min = 0>
+                    <button mat-stroked-button color="primary" *ngIf="id_bControl.value" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="id_bControl.setValue(null)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+    
+            </form>
+    
+            <button mat-flat-button color="accent" (click)="updateBookingItem()">Обновить заказ</button>
+            
+        </mat-card-actions>
+</mat-card>

@@ -1,0 +1,110 @@
+<mat-card>
+    <p>
+        <button mat-fab color="primary" ><a routerLink="/travell-list">
+            <mat-icon>home</mat-icon></a>
+          </button> 
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/turfirma">
+            <mat-icon>public</mat-icon></a>
+          </button>
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/voucher">
+            <mat-icon>beach_access</mat-icon></a>
+          </button>
+          &nbsp;
+
+          <button mat-fab color="primary" ><a routerLink="/booking">
+            <mat-icon><mat-icon>sentiment_very_satisfied</mat-icon></mat-icon></a>
+          </button>
+          &nbsp;
+    </p>
+
+    
+    <br>
+    <br>
+    <span>Информация о путевках</span>
+    <br>
+    <br>
+    
+<mat-card-content>
+    <br>
+<h3><button mat-fab disabled >
+    <mat-icon>beach_access</mat-icon>
+  </button> Путевки </h3> 
+<h3>Id, Санаторий, Адрес, Цена, Количество:</h3>
+    <mat-list role="list">
+        <tl-voucher-list-item *ngFor="let item of vouchers"
+                           [item]="item"
+                           role="listitem"
+                           (delete)="deleteVoucher($event)"
+                           >
+        </tl-voucher-list-item>
+    </mat-list>
+<s>             </s>
+</mat-card-content>
+<mat-card-actions>
+    
+    <form [formGroup]="form1">
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Название санатория</mat-label>
+            <input formControlName="sanatorium" matInput type="text">
+            <button mat-stroked-button color="primary" *ngIf="sanatoriumControl.value" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="sanatoriumControl.setValue(null)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        &nbsp;
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Адрес</mat-label>
+            <input formControlName="address" matInput type="text">
+            <button mat-stroked-button color="primary" *ngIf="addressControl.value" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="addressControl.setValue(null)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        &nbsp;
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Цена</mat-label>
+            <input formControlName="price" matInput type="number" min = 0>
+            <button mat-stroked-button color="primary" *ngIf="priceControl.value" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="priceControl.setValue(null)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        &nbsp;
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Количество</mat-label>
+            <input formControlName="quantity" matInput type="number" min = 0>
+            <button mat-stroked-button color="primary" *ngIf="quantityControl.value" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="quantityControl.setValue(null)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        
+        <br>
+        <button mat-flat-button color="accent" (click)="addVoucherItem()">Добавить путевку</button>
+        <br>
+        <br>
+
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Id (for update)</mat-label>
+            <input formControlName="id" matInput type="number" min = 0>
+            <button mat-stroked-button color="primary" *ngIf="idControl.value" matSuffix mat-icon-button aria-label="Clear"
+                    (click)="idControl.setValue(null)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-flat-button color="accent" (click)="updateVoucherItem()">Обновить информацию о путевке</button>
+    
+</mat-card-actions>
+
+</mat-card>
