@@ -2,7 +2,7 @@
 
 CREATE DATABASE BOOKING
 
--- Таблица с информацией о Тур. фирме
+-- Таблица с информацией о тур. фирме
 CREATE TABLE TurFirma(
 Id int identity(1,1) constraint PK_TurFirma primary key,
 Name nvarchar(100),
